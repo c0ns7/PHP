@@ -1,0 +1,151 @@
+.header {
+    background-color: #272d47;
+    border-bottom: 1px solid hsla(0,0%,100%,.04);
+    
+    .wrapper {
+        .inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 0;
+
+            .logo {
+                a {
+                    img {
+                        height: 36px;
+
+                        @media screen and (max-width: 320px) {
+                            & {
+                                height: 34px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .burger {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                cursor: pointer;
+
+                color: #fff;
+
+                svg {
+                    fill: #fff;
+                    height: 25px;
+                }
+            }
+
+            .menu-list {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -100vh;
+                height: 100vh;
+                width: 100%;
+                max-width: 250px;
+
+                padding-left: 20px;
+
+                // background-image: linear-gradient(30deg , #0048bd, #44a7fd);
+                background-image: linear-gradient(30deg , #272d47, #705ec8);
+                border-top-right-radius: 80px;
+
+                transition: .5s;
+
+                &.active {
+                    left: 0;
+                }
+
+                @media screen and (max-width: 400px) {
+                    & {
+                        max-width: 60%;
+                    }
+                }
+
+                .wrapper-2 {
+                    color: #fff;
+
+                    svg {
+                        fill: #fff;
+                    }
+
+                    span {
+                        display: flex;
+                        margin: 0;
+                        padding: 40px 0;
+                    }
+
+                    a {
+                        display: flex;
+                        padding: 12px;
+                        padding-left: 30px;
+
+                        color: #fff;
+
+                        border-top-left-radius: 20px;
+                        border-bottom-left-radius: 20px;
+
+                        @media screen and (max-width: 320px) {
+                            & {
+                                padding-left: 25px;
+                            }
+                        }
+
+                        &:hover {
+                            color: #705ec8;
+                            background: #fff;
+                            outline: none;
+                            position: relative;
+                            background-color: #fff;
+
+                            svg {
+                                fill: #705ec8;
+                            }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                background-color: transparent;
+                                bottom: 100%;
+                                right: 0;
+                                height: 35px;
+                                width: 35px;
+                                border-bottom-right-radius: 18px;
+                                box-shadow: 0 20px 0 0 #fff;
+                            }
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                background-color: transparent;
+                                top: 38px;
+                                right: 0;
+                                height: 35px;
+                                width: 35px;
+                                border-top-right-radius: 18px;
+                                box-shadow: 0 -20px 0 0 #fff;
+                            }
+                        }
+
+                        i {
+                            display: flex;
+                            align-items: center;
+                            
+                            width: 20px;
+                            margin-right: 5px;
+
+                            @media screen and (max-width: 320px) {
+                                & {
+                                    margin-right: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
